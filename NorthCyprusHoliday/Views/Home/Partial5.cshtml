@@ -1,0 +1,15 @@
+﻿@using NorthCyprusHoliday.Models.Siniflar
+@model List<Blog>
+
+@foreach (var x in Model)
+{
+    <div class="box1-left">
+        <div class="bot-img">
+            <img src="@x.BlogImage" alt="@x.Baslik" />
+        </div>
+        <div class="bot-desc1">
+            <a href="/Blog/BlogDetay/@x.Id"><p>@x.Aciklama.Substring(0, 60) ...</p></a> 
+        </div>
+        <div class="clear"></div>
+    </div>
+}

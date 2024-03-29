@@ -1,0 +1,37 @@
+﻿@using NorthCyprusHoliday.Models.Siniflar
+@model List<Blog> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="w3-container">
+    <h3 class="mt-3 mb-3" style="color:royalblue; align-content:center; text-align:center;">Blog Düzenle</h3>
+    <table class="table table-bordered table-hover text-center">
+        <thead>
+            <tr >
+                <th>ID</th>
+                <th>Başlık</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+                <th>Yazıyı Görüntüle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Id</td>
+                    <td>@x.Baslik</td>
+                    <td><a href="/Admin/BlogSil/@x.Id" class="btn btn-danger">Sil</a></td>
+                    <td><a href="/Admin/BlogGetir/@x.Id" class="btn btn-success">Güncelle</a></td>
+                    <td><a href="/Blog/BlogDetay/@x.Id" target="_blank" class="btn btn-outline-dark">Git</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Admin/YeniBlog" class="btn btn-primary">Yeni Ekle</a>
+</div>
+

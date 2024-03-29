@@ -1,0 +1,56 @@
+﻿@model NorthCyprusHoliday.Models.Siniflar.BlogYorum
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="single">
+    <div class="container">
+        <div class="col-md-8 single-main">
+            @foreach (var x in Model.Deger1)
+            {
+                <div class="single-grid">
+
+                    <h3><a href="/Blog/BlogDetay/@x.Id">@x.Baslik</a></h3>
+
+                    <img src="@x.BlogImage" alt="@x.Baslik" />
+
+                    <p>@x.Aciklama.Substring(0, 200) <a href="/Blog/BlogDetay/@x.Id">Read More >></a></p>
+                </div>
+            }
+
+        </div>
+
+        <div class="col-md-4 side-content">
+            <div class="recent">
+                <h3>RECENT POSTS</h3>
+                @foreach(var y in Model.Deger3.OrderByDescending(y => y.Id))
+                {
+                <ul>
+                    <li><a href="/Blog/BlogDetay/@y.Id">@y.Baslik</a></li> 
+                </ul>
+                }
+            </div>
+            <div class="comments">
+                <h3>RECENT COMMENTS</h3>
+                <ul>
+                    <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+                    <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+                    <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                </ul>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="clearfix">
+            @*</div>@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))*@
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,108 @@
+﻿<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>North Cyprus Holiday | Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/Templates/web/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Templates/web/css/style2.css" type="text/css" media="all" />
+    <link href="~/Templates/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/Templates/web/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <script type="text/javascript" src="~/Templates/web/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Templates/web/js/easing.js"></script>
+    <script src="~/Templates/web/js/jquery.min.js"></script>
+    <script src="~/Templates/web/js/responsiveslides.min.js"></script>
+    <!--/script-->
+
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+
+
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="logo"><a href="/Home/Index"><img src="~/Templates/web/images/logo.png" alt="" /></a></div>
+            <div class="con-right">
+                <div class="grid1-l-img">
+                    <img src="~/Templates/web/images/contact.png" alt="">
+                </div>
+                <div class="grid1-l-desc">
+                    <p>Contact : +90 (555) 555 55 55</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul id="nav">
+                <li><a href="/Home/Index">Home</a></li>
+                <li><a class="hsubs" href="/About/Index">About</a></li>
+                <li>
+                    <a class="hsubs" href="/Guide/Index">Guide</a>
+                    <ul class="subs">
+                        <li><a href="/Hotels/Index">Hotels</a></li>
+                        <li><a href="/Restaurants/Index">Restaurants</a></li>
+                        <li><a href="/Museums/Index">Museums</a></li>
+                    </ul>
+                </li>
+                <li><a class="hsubs" href="/Blog/Index">Blog</a></li>
+                <li><a href="/Contact/Index">Contact</a></li>
+              
+            </ul>
+        </div>
+    </div>
+
+    @*--------------------------------------------------*@
+
+
+
+    @RenderBody()
+
+
+    @*--------------------------------------------------*@
+
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p>&copy; 2024 - @(DateTime.Now.Year) MY Yazılım (Murat Yücedağ) - Fullstack .Net Core Development Bootcampi kapsamında  M. Gürkan KAYA tarafından hazırlanmıştır. |  <a href="/GirisYap/Login">Admin</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
